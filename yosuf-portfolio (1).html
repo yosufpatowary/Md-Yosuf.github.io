@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Md. Yosuf — Economics Graduate & Development Economist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FAFAF7;
+    --charcoal: #1A1A18;
+    --dark: #2C2C28;
+    --accent: #B5622A;
+    --accent-light: #D4845A;
+    --muted: #7A7A6E;
+    --border: #E0DAD0;
+    --light-gray: #EEEBE4;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--charcoal); text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* SECTIONS */
+  section { padding: 7rem 4rem; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 4rem;
+    padding-top: 10rem;
+    background: var(--cream);
+    position: relative; overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181,98,42,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-left { position: relative; z-index: 1; }
+  .hero-eyebrow {
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 2rem; height: 1px; background: var(--accent);
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900; line-height: 1.0;
+    color: var(--charcoal); letter-spacing: -0.03em;
+    margin-bottom: 0.4rem;
+  }
+  .hero-name em {
+    font-style: italic; color: var(--accent);
+  }
+  .hero-title {
+    font-size: 1rem; color: var(--muted); font-weight: 300;
+    letter-spacing: 0.04em; margin-bottom: 2rem;
+    border-left: 2px solid var(--accent); padding-left: 1rem;
+    line-height: 1.6;
+  }
+  .hero-bio {
+    font-size: 1rem; line-height: 1.8; color: var(--dark);
+    max-width: 480px; margin-bottom: 2.5rem;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--accent); color: white;
+    padding: 0.85rem 2.2rem; border-radius: 2px;
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 500; text-decoration: none; transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--dark); }
+  .btn-outline {
+    border: 1px solid var(--charcoal); color: var(--charcoal);
+    padding: 0.85rem 2.2rem; border-radius: 2px;
+    font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 500; text-decoration: none; transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--charcoal); color: white; }
+
+  .hero-right {
+    position: relative; display: flex;
+    justify-content: center; align-items: center;
+  }
+  .hero-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    position: relative;
+    box-shadow: 8px 8px 0 var(--accent);
+    max-width: 360px; width: 100%;
+  }
+  .hero-card-label {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
+  }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .stat-item { }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--charcoal);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.08em; margin-top: 0.3rem;
+  }
+  .hero-badge {
+    position: absolute; top: -1.5rem; right: -1.5rem;
+    background: var(--accent); color: white;
+    width: 80px; height: 80px; border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-size: 0.62rem; text-align: center;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    font-weight: 600; line-height: 1.3;
+  }
+
+  /* SECTION HEADERS */
+  .section-header { margin-bottom: 4rem; }
+  .section-tag {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-tag::before {
+    content: ''; display: block; width: 2rem; height: 1px; background: var(--accent);
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700; line-height: 1.1;
+    letter-spacing: -0.02em; color: var(--charcoal);
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  /* ABOUT */
+  #about { background: white; }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start;
+  }
+  .about-aside { position: sticky; top: 8rem; }
+  .about-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem; line-height: 1.5;
+    color: var(--dark); font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem; margin-bottom: 2rem;
+  }
+  .about-details { display: flex; flex-direction: column; gap: 0.8rem; }
+  .about-detail-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    font-size: 0.88rem; color: var(--dark);
+  }
+  .detail-label {
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); font-weight: 500; min-width: 80px; padding-top: 0.1rem;
+  }
+  .about-body p {
+    font-size: 1rem; line-height: 1.9; color: var(--dark);
+    margin-bottom: 1.4rem;
+  }
+  .interest-tags {
+    display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem;
+  }
+  .tag {
+    border: 1px solid var(--border); padding: 0.4rem 1rem;
+    font-size: 0.78rem; color: var(--muted); border-radius: 100px;
+    letter-spacing: 0.04em;
+  }
+
+  /* WHAT I DO */
+  #whatido { background: var(--cream); }
+  .whatido-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
+  .do-card {
+    background: white; padding: 2.5rem 2rem;
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .do-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  .do-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 3px; height: 100%; background: var(--accent);
+  }
+  .do-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; font-weight: 900;
+    color: var(--light-gray); line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .do-title {
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 0.8rem;
+  }
+  .do-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--charcoal); margin-bottom: 1rem; line-height: 1.2;
+  }
+  .do-list {
+    list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .do-list li {
+    font-size: 0.88rem; color: var(--muted);
+    padding-left: 1rem; position: relative;
+  }
+  .do-list li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--accent); font-size: 0.75rem;
+  }
+
+  /* EXPERIENCE */
+  #experience { background: white; }
+  .exp-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; }
+  .exp-timeline { position: relative; }
+  .exp-item {
+    display: grid; grid-template-columns: 120px 1fr;
+    gap: 2rem; margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-meta { }
+  .exp-date {
+    font-size: 0.75rem; color: var(--muted);
+    letter-spacing: 0.05em; line-height: 1.5; margin-bottom: 0.4rem;
+  }
+  .exp-org {
+    font-size: 0.72rem; color: var(--accent); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .exp-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--charcoal); margin-bottom: 0.6rem; line-height: 1.3;
+  }
+  .exp-desc {
+    font-size: 0.9rem; line-height: 1.7; color: var(--dark);
+    margin-bottom: 0.8rem;
+  }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .exp-tag {
+    background: var(--light-gray); padding: 0.25rem 0.7rem;
+    font-size: 0.7rem; color: var(--muted); border-radius: 2px;
+  }
+
+  /* PROJECTS */
+  #projects { background: var(--cream); }
+  .projects-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
+  .project-card {
+    background: white; border: 1px solid var(--border);
+    padding: 2rem; position: relative;
+    transition: all 0.25s;
+  }
+  .project-card:hover {
+    border-color: var(--accent);
+    box-shadow: 4px 4px 0 var(--accent);
+    transform: translate(-2px, -2px);
+  }
+  .project-year {
+    font-size: 0.72rem; color: var(--accent);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.8rem; font-weight: 600;
+  }
+  .project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--charcoal); margin-bottom: 0.8rem;
+    line-height: 1.35;
+  }
+  .project-desc {
+    font-size: 0.85rem; line-height: 1.7; color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+  .project-award {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.75rem; color: var(--accent); font-weight: 600;
+  }
+  .project-award::before { content: '★'; }
+
+  /* PUBLICATIONS */
+  #publications { background: var(--charcoal); color: white; }
+  #publications .section-title { color: white; }
+  #publications .section-tag { color: var(--accent-light); }
+  #publications .section-tag::before { background: var(--accent-light); }
+  .pub-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 3rem; display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem; align-items: start;
+    margin-top: 3rem;
+  }
+  .pub-journal {
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent-light); font-weight: 600; margin-bottom: 1rem;
+  }
+  .pub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700; line-height: 1.3;
+    color: white; margin-bottom: 1rem;
+  }
+  .pub-authors {
+    font-size: 0.88rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 1.5rem; font-style: italic;
+  }
+  .pub-contributions { }
+  .pub-contrib-label {
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-bottom: 0.8rem;
+  }
+  .pub-contrib-list {
+    list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .pub-contrib-list li {
+    font-size: 0.85rem; color: rgba(255,255,255,0.7);
+    padding-left: 1rem; position: relative;
+  }
+  .pub-contrib-list li::before {
+    content: '·'; position: absolute; left: 0; color: var(--accent-light);
+  }
+  .pub-doi {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 1.5rem; padding: 0.7rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.2); color: white;
+    font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .pub-doi:hover { background: var(--accent); border-color: var(--accent); }
+  .pub-meta-side {
+    text-align: right; min-width: 160px;
+  }
+  .pub-vol {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; font-weight: 900; color: rgba(255,255,255,0.1);
+    line-height: 1; margin-bottom: 0.5rem;
+  }
+  .pub-citation {
+    font-size: 0.75rem; color: rgba(255,255,255,0.3);
+    line-height: 1.6;
+  }
+
+  /* SKILLS */
+  #skills { background: white; }
+  .skills-wrapper {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+  }
+  .skill-group { }
+  .skill-group-title {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem; border-bottom: 1px solid var(--border);
+  }
+  .skill-items { display: flex; flex-direction: column; gap: 0.6rem; }
+  .skill-item {
+    font-size: 0.88rem; color: var(--dark); display: flex;
+    align-items: center; gap: 0.6rem;
+  }
+  .skill-item::before {
+    content: ''; width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0;
+  }
+
+  /* AWARDS */
+  #awards { background: var(--cream); }
+  .awards-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .award-card {
+    background: white; border: 1px solid var(--border);
+    padding: 1.8rem; display: flex; gap: 1.2rem;
+    transition: all 0.2s;
+  }
+  .award-card:hover { border-color: var(--accent); }
+  .award-icon {
+    font-size: 1.5rem; flex-shrink: 0; line-height: 1;
+  }
+  .award-title {
+    font-size: 0.88rem; font-weight: 600; color: var(--charcoal);
+    margin-bottom: 0.3rem; line-height: 1.3;
+  }
+  .award-org {
+    font-size: 0.75rem; color: var(--muted);
+  }
+  .award-year {
+    font-size: 0.7rem; color: var(--accent);
+    letter-spacing: 0.08em; margin-top: 0.3rem;
+  }
+
+  /* LEADERSHIP */
+  #leadership { background: white; }
+  .leadership-list {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  }
+  .leadership-item {
+    border-left: 2px solid var(--border); padding: 0 0 0 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .leadership-item:hover { border-color: var(--accent); }
+  .leadership-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--charcoal); margin-bottom: 0.2rem;
+  }
+  .leadership-org {
+    font-size: 0.82rem; color: var(--accent); font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  .leadership-period {
+    font-size: 0.75rem; color: var(--muted);
+  }
+
+  /* CONFERENCES */
+  #conferences { background: var(--cream); }
+  .conf-list { display: flex; flex-direction: column; gap: 0; }
+  .conf-item {
+    display: grid; grid-template-columns: 80px 1fr auto;
+    gap: 2rem; align-items: center;
+    padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+  }
+  .conf-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700; color: var(--charcoal);
+  }
+  .conf-name {
+    font-size: 0.92rem; color: var(--dark); font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+  .conf-role {
+    font-size: 0.78rem; color: var(--muted);
+  }
+  .conf-badge {
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.3rem 0.8rem; border: 1px solid var(--accent);
+    color: var(--accent); font-weight: 600; white-space: nowrap;
+  }
+
+  /* TESTIMONIAL */
+  #testimonial {
+    background: var(--accent); color: white;
+    padding: 6rem 4rem; text-align: center;
+  }
+  .testimonial-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-style: italic; line-height: 1.4;
+    max-width: 800px; margin: 0 auto 2rem;
+    color: white;
+  }
+  .testimonial-attr {
+    font-size: 0.8rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
+  }
+
+  /* CONTACT */
+  #contact { background: var(--charcoal); color: white; }
+  #contact .section-title { color: white; }
+  #contact .section-tag { color: var(--accent-light); }
+  #contact .section-tag::before { background: var(--accent-light); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; margin-top: 4rem;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+  .contact-item { }
+  .contact-label {
+    font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-bottom: 0.4rem;
+  }
+  .contact-value {
+    font-size: 1rem; color: white; font-weight: 400;
+  }
+  .contact-value a {
+    color: var(--accent-light); text-decoration: none;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 1.2rem; }
+  .contact-link {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white; text-decoration: none;
+    font-size: 0.88rem;
+    transition: all 0.2s;
+  }
+  .contact-link:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: var(--accent-light);
+  }
+  .contact-link-arrow { color: var(--accent-light); }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal); border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 2rem 4rem; display: flex;
+    justify-content: space-between; align-items: center;
+  }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+  .footer-back {
+    font-size: 0.78rem; color: rgba(255,255,255,0.3);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-back:hover { color: var(--accent-light); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+  .delay-4 { animation-delay: 0.6s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 5rem 1.5rem; }
+    #hero { grid-template-columns: 1fr; padding-top: 7rem; }
+    .hero-right { display: none; }
+    .about-grid,
+    .exp-item,
+    .pub-card,
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .whatido-grid,
+    .projects-grid,
+    .awards-grid,
+    .skills-wrapper { grid-template-columns: 1fr 1fr; }
+    .leadership-list { grid-template-columns: 1fr; }
+    .conf-item { grid-template-columns: 60px 1fr; }
+    .conf-badge { display: none; }
+    .pub-meta-side { display: none; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .whatido-grid,
+    .projects-grid,
+    .awards-grid,
+    .skills-wrapper { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">M.<span>Y</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow fade-up">Economics Graduate · Bangladesh</div>
+    <h1 class="hero-name fade-up delay-1">Hello,<br>I am <em>Yosuf!</em></h1>
+    <div class="hero-title fade-up delay-2">
+      Scholarship Applicant &nbsp;|&nbsp; Development Economist<br>
+      Published Researcher &nbsp;|&nbsp; Aspiring Graduate Scholar
+    </div>
+    <p class="hero-bio fade-up delay-3">
+      An Economics graduate with hands-on quantitative research experience, a peer-reviewed publication, and a track record of leading academic and community initiatives across Bangladesh.
+    </p>
+    <div class="hero-cta fade-up delay-4">
+      <a href="#projects" class="btn-primary">View My Research</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+  <div class="hero-right fade-up delay-2">
+    <div class="hero-card">
+      <div class="hero-badge">Published<br>2026</div>
+      <div class="hero-card-label">At a Glance</div>
+      <div class="stat-grid">
+        <div class="stat-item">
+          <div class="stat-number">3.27</div>
+          <div class="stat-label">CGPA / 4.00</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1</div>
+          <div class="stat-label">Peer-reviewed<br>Publication</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Research<br>Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Survey<br>Respondents</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-aside">
+      <div class="section-tag">About Me</div>
+      <blockquote class="about-quote">
+        "Research is my lens for understanding development — and my tool for changing it."
+      </blockquote>
+      <div class="about-details">
+        <div class="about-detail-item">
+          <span class="detail-label">Degree</span>
+          <span>BSS in Economics, Govt. Titumir College, University of Dhaka</span>
+        </div>
+        <div class="about-detail-item">
+          <span class="detail-label">CGPA</span>
+          <span>3.27 / 4.00</span>
+        </div>
+        <div class="about-detail-item">
+          <span class="detail-label">Location</span>
+          <span>Dhaka, Bangladesh</span>
+        </div>
+        <div class="about-detail-item">
+          <span class="detail-label">Languages</span>
+          <span>Bengali · English · Arabic</span>
+        </div>
+        <div class="about-detail-item">
+          <span class="detail-label">Open to</span>
+          <span>Graduate Study · Remote Research · Collaboration</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-body">
+      <div class="section-title" style="margin-bottom:2rem;">Who I <em>Am</em></div>
+      <p>
+        I am an Economics graduate from Government Titumir College, University of Dhaka, with a strong foundation in quantitative research, development economics, and academic writing. My academic journey has been shaped by a deep curiosity about why economies fail the people they are meant to serve — and how rigorous empirical research can guide better policy.
+      </p>
+      <p>
+        I have worked as a Research Assistant on two government-funded health research projects — one under the Ministry of Planning's Social Science Research Council and another under the Bangladesh Medical Research Council — gaining direct experience in field data collection, research coordination, and ethics-compliant implementation.
+      </p>
+      <p>
+        As a Research Assistant (Intern) at the Accident Research Institute (ARI), BUET, I drafted technical proposals on road safety and conducted systematic literature reviews. I co-authored a peer-reviewed article published in the <em>Asian Review of Social Sciences</em> (2026), contributing literature synthesis, fieldwork over 400+ respondents, and SPSS/STATA-based statistical analysis.
+      </p>
+      <p>
+        Beyond research, I have taught undergraduate economics for nearly three years, led the Govt. Titumir College Research Club as Vice President, and founded the 7 College Entrepreneur Forum. I am now actively preparing for graduate study in Development Economics.
+      </p>
+      <div class="interest-tags">
+        <span class="tag">Development Economics</span>
+        <span class="tag">Food Price Dynamics</span>
+        <span class="tag">Fiscal Policy</span>
+        <span class="tag">Maternal Health & Poverty</span>
+        <span class="tag">Quantitative Methods</span>
+        <span class="tag">Bangladesh Economy</span>
+        <span class="tag">Road Safety Policy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section id="whatido">
+  <div class="section-header">
+    <div class="section-tag">Expertise</div>
+    <h2 class="section-title">What I <em>Do</em></h2>
+  </div>
+  <div class="whatido-grid">
+    <div class="do-card">
+      <div class="do-number">01</div>
+      <div class="do-title">Research & Analysis</div>
+      <div class="do-heading">Quantitative<br>Research Design</div>
+      <ul class="do-list">
+        <li>Survey instrument development</li>
+        <li>SPSS & STATA analysis</li>
+        <li>Regression & chi-square modelling</li>
+        <li>Systematic literature review</li>
+        <li>KoboToolbox data collection</li>
+      </ul>
+    </div>
+    <div class="do-card">
+      <div class="do-number">02</div>
+      <div class="do-title">Academic Writing</div>
+      <div class="do-heading">Scholarly<br>Communication</div>
+      <ul class="do-list">
+        <li>Peer-reviewed publication</li>
+        <li>Research proposal formulation</li>
+        <li>Technical report writing</li>
+        <li>Literature synthesis</li>
+        <li>Reference management (Zotero)</li>
+      </ul>
+    </div>
+    <div class="do-card">
+      <div class="do-number">03</div>
+      <div class="do-title">Teaching & Mentoring</div>
+      <div class="do-heading">Economics<br>Education</div>
+      <ul class="do-list">
+        <li>Undergraduate Micro/Macroeconomics</li>
+        <li>Econometrics & Statistics</li>
+        <li>Research methodology workshops</li>
+        <li>Data analysis training (SPSS/STATA)</li>
+        <li>Student mentorship & proposal guidance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <div class="section-tag">Experience</div>
+    <h2 class="section-title">Research &<br><em>Academic</em> Journey</h2>
+  </div>
+  <div class="exp-timeline">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">Mar 2026 –<br>Present</div>
+        <div class="exp-org">GTCRC</div>
+      </div>
+      <div>
+        <div class="exp-role">Research Instructor</div>
+        <div class="exp-desc">Facilitate structured training workshops on research methodology, quantitative data analysis, and academic writing for undergraduate club members. Design course materials and mentor students in research proposal development and scholarly manuscripts.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">SPSS</span><span class="exp-tag">STATA</span>
+          <span class="exp-tag">Academic Writing</span><span class="exp-tag">Mentoring</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">2025</div>
+        <div class="exp-org">Ministry of Planning, Bangladesh</div>
+      </div>
+      <div>
+        <div class="exp-role">Research Assistant — Overweight Girls & Maternal Health (SSRC)</div>
+        <div class="exp-desc">Authorized by the Principal Investigator to liaise directly with the Social Science Research Council, Planning Division, Ministry of Planning. Supported project documentation, progress reporting, and coordination of research activities under a government-funded health research mandate.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Government Research</span><span class="exp-tag">Health Economics</span>
+          <span class="exp-tag">Field Coordination</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">2025</div>
+        <div class="exp-org">BMRC</div>
+      </div>
+      <div>
+        <div class="exp-role">Research Assistant — Socioeconomic Disparities in Maternal Cardiovascular Health</div>
+        <div class="exp-desc">Undertook project-related activities for the Bangladesh Medical Research Council, including financial and administrative coordination on behalf of Consultaid Bangladesh. Contributed to field data collection, research implementation, and activity reporting in accordance with BMRC protocols.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">BMRC</span><span class="exp-tag">Field Data Collection</span>
+          <span class="exp-tag">Maternal Health</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">Nov 2024 –<br>Jun 2025</div>
+        <div class="exp-org">ARI, BUET</div>
+      </div>
+      <div>
+        <div class="exp-role">Research Assistant (Intern) — Accident Research Institute</div>
+        <div class="exp-desc">Drafted research proposals and technical reports on road accident causation, pattern analysis, and public safety intervention strategies. Conducted systematic literature reviews and maintained structured reference databases using Zotero. Completed ARI-BUET's certified course in Fundamentals of Research Methodology concurrently.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">BUET</span><span class="exp-tag">Road Safety</span>
+          <span class="exp-tag">Zotero</span><span class="exp-tag">Literature Review</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">Jan 2023 –<br>Oct 2025</div>
+        <div class="exp-org">Rubel's Economics Method</div>
+      </div>
+      <div>
+        <div class="exp-role">Academic Instructor (Part-Time)</div>
+        <div class="exp-desc">Delivered undergraduate instruction (Years 1–3) in Micro/Macroeconomics, Statistics, Mathematics, Research Methodology, and Econometrics. Designed lesson plans, conducted tutorials, and provided individualized mentoring for exam preparation and research project development.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Econometrics</span><span class="exp-tag">Microeconomics</span>
+          <span class="exp-tag">Statistics</span><span class="exp-tag">Tutoring</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <div class="section-tag">Research Projects</div>
+    <h2 class="section-title">Key <em>Projects</em></h2>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-year">2025 · Bangladesh</div>
+      <div class="project-title">Impact of the July Revolution on Daily Food Prices & Household Consumption Patterns</div>
+      <div class="project-desc">Operationalized variables for price shock, household resilience, and caloric adequacy using publicly available price data and primary survey instruments. Analysed consumption disruptions following a major political event.</div>
+      <div class="project-award">1st Place — GTCRC Research Proposal Contest 2025</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-year">2024–2026 · Dhaka</div>
+      <div class="project-title">Environmental Awareness & Practice Among Government College Students in Dhaka</div>
+      <div class="project-desc">Designed the primary data collection instrument, led fieldwork (N > 400), and performed quantitative analysis using SPSS and STATA — descriptive statistics, chi-square tests, and regression modelling. Mentored junior team members throughout.</div>
+      <div class="project-award">Published — Asian Review of Social Sciences, 15(1), 2026</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-year">2023–2024 · Dhaka</div>
+      <div class="project-title">Tackling Inflationary Pressure Through Effective Budget Allocation: Bangladesh National Budget 2023–24</div>
+      <div class="project-desc">Analysed ten years of Bangladesh national budget data to identify structural mismatches between inflation drivers and allocation priorities. Advanced through multi-stage evaluation as first author of a three-member team.</div>
+      <div class="project-award">Multi-stage Competition — First Author</div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-year">2024 · Dhaka</div>
+      <div class="project-title">Smartphone Addiction Among Undergraduate Students of Government Colleges in Dhaka</div>
+      <div class="project-desc">Contributed to survey instrument design, systematic fieldwork, data cleaning, and SPSS-based statistical analysis across a sample exceeding 500 undergraduate respondents. Presented findings to a faculty panel.</div>
+      <div class="project-award">Certificate of Completion with Commendation</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-header">
+    <div class="section-tag">Scholarly Output</div>
+    <h2 class="section-title">Publication</h2>
+  </div>
+  <div class="pub-card">
+    <div>
+      <div class="pub-journal">Asian Review of Social Sciences · Vol. 15, No. 1 · 2026</div>
+      <div class="pub-title">Perceptions, Practices and Priorities: Exploring Environmental Concerns and Engagement Among Government College Students in Dhaka City</div>
+      <div class="pub-authors">Asik, M. E. M., Hossain, M. G., Yosuf, M., & Nahiyan, A. A. (2026). Asian Review of Social Sciences, 15(1), 51–61.</div>
+      <div class="pub-contrib-label">My Contributions</div>
+      <ul class="pub-contrib-list">
+        <li>Literature synthesis and conceptual framework</li>
+        <li>Primary field data collection (N > 400 respondents)</li>
+        <li>SPSS-based statistical analysis including regression modelling</li>
+        <li>Data visualization and reference management (Zotero)</li>
+      </ul>
+      <a href="https://doi.org/10.70112/arss-2026.15.1.4424" target="_blank" class="pub-doi">
+        View Publication ↗
+      </a>
+    </div>
+    <div class="pub-meta-side">
+      <div class="pub-vol">15</div>
+      <div class="pub-citation">Vol. 15, Issue 1<br>Pages 51–61<br>DOI: 10.70112/<br>arss-2026.15.1.4424</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <div class="section-tag">Capabilities</div>
+    <h2 class="section-title">Technical <em>Skills</em></h2>
+  </div>
+  <div class="skills-wrapper">
+    <div class="skill-group">
+      <div class="skill-group-title">Statistical Software</div>
+      <div class="skill-items">
+        <span class="skill-item">SPSS</span>
+        <span class="skill-item">STATA</span>
+        <span class="skill-item">KoboToolbox</span>
+        <span class="skill-item">Microsoft Excel</span>
+        <span class="skill-item">NVivo</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Research Methods</div>
+      <div class="skill-items">
+        <span class="skill-item">Quantitative Design</span>
+        <span class="skill-item">Qualitative Design</span>
+        <span class="skill-item">Survey Development</span>
+        <span class="skill-item">Probability Sampling</span>
+        <span class="skill-item">Ethics Review</span>
+        <span class="skill-item">Systematic Lit. Review</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Writing & Communication</div>
+      <div class="skill-items">
+        <span class="skill-item">Proposal Writing</span>
+        <span class="skill-item">Report Writing</span>
+        <span class="skill-item">Literature Synthesis</span>
+        <span class="skill-item">Zotero</span>
+        <span class="skill-item">Academic Publishing</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Productivity & Languages</div>
+      <div class="skill-items">
+        <span class="skill-item">Microsoft Office Suite</span>
+        <span class="skill-item">Canva</span>
+        <span class="skill-item">Bengali (Native)</span>
+        <span class="skill-item">English (Proficient)</span>
+        <span class="skill-item">Arabic (Reading)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-header">
+    <div class="section-tag">Recognition</div>
+    <h2 class="section-title">Awards &<br><em>Honours</em></h2>
+  </div>
+  <div class="awards-grid">
+    <div class="award-card">
+      <div class="award-icon">🏆</div>
+      <div>
+        <div class="award-title">Winner (1st Place) — GTCRC Research Proposal Writing Contest</div>
+        <div class="award-org">Govt. Titumir College Research Club</div>
+        <div class="award-year">July 2025</div>
+      </div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">🎖️</div>
+      <div>
+        <div class="award-title">Token of Honour — Finance Secretary, GTCRC 2nd Executive Committee</div>
+        <div class="award-org">GTCRC</div>
+        <div class="award-year">March 2025</div>
+      </div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">📜</div>
+      <div>
+        <div class="award-title">Certificate of Completion with Commendation — Data Analysis Capstone</div>
+        <div class="award-org">Govt. Titumir College Analytics Club</div>
+        <div class="award-year">March 2024</div>
+      </div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">🌟</div>
+      <div>
+        <div class="award-title">Certificate of Appreciation — GTCRC & Indra College Research Festival</div>
+        <div class="award-org">GTCRC</div>
+        <div class="award-year">February 2024</div>
+      </div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">📋</div>
+      <div>
+        <div class="award-title">Merit Recognition Certificate — Academic Excellence in Board Exams</div>
+        <div class="award-org">Begumgonj-Sonaimuri Upazila Student Welfare Association</div>
+        <div class="award-year">January 2023</div>
+      </div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">💻</div>
+      <div>
+        <div class="award-title">Best Volunteer Award — Tech Mania 1.0</div>
+        <div class="award-org">Titumir College IT Society</div>
+        <div class="award-year">June 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="section-header">
+    <div class="section-tag">Leadership & Service</div>
+    <h2 class="section-title">Roles &<br><em>Initiatives</em></h2>
+  </div>
+  <div class="leadership-list">
+    <div class="leadership-item">
+      <div class="leadership-role">Vice President</div>
+      <div class="leadership-org">Govt. Titumir College Research Club (GTCRC)</div>
+      <div class="leadership-period">January 2025 – February 2026 · Led Envoy recruitment, supervised 10-member team</div>
+    </div>
+    <div class="leadership-item">
+      <div class="leadership-role">Founder & President</div>
+      <div class="leadership-org">7 College Entrepreneur Forum (7CEF)</div>
+      <div class="leadership-period">February 2022 – Present · Cross-institution entrepreneurship platform</div>
+    </div>
+    <div class="leadership-item">
+      <div class="leadership-role">Finance Secretary</div>
+      <div class="leadership-org">Govt. Titumir College Research Club (GTCRC)</div>
+      <div class="leadership-period">August 2023 – December 2025</div>
+    </div>
+    <div class="leadership-item">
+      <div class="leadership-role">Research Instructor</div>
+      <div class="leadership-org">Govt. Titumir College Research Club (GTCRC)</div>
+      <div class="leadership-period">March 2026 – Present · SPSS, STATA & academic writing workshops</div>
+    </div>
+    <div class="leadership-item">
+      <div class="leadership-role">Executive Member</div>
+      <div class="leadership-org">Govt. Titumir College Analytics Club</div>
+      <div class="leadership-period">June 2023 – May 2024</div>
+    </div>
+    <div class="leadership-item">
+      <div class="leadership-role">Flood Relief Fundraising Lead</div>
+      <div class="leadership-org">Crisis Response Team, Noakhali</div>
+      <div class="leadership-period">Aug–Sep 2024 · Raised BDT 2,000,000+; coordinated boat-based distribution</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCES -->
+<section id="conferences">
+  <div class="section-header">
+    <div class="section-tag">Academic Presence</div>
+    <h2 class="section-title">Conferences &<br><em>Seminars</em></h2>
+  </div>
+  <div class="conf-list">
+    <div class="conf-item">
+      <div class="conf-year">2026</div>
+      <div>
+        <div class="conf-name">Tobacco Control Policy Research Grant Programme — Dissemination Conference</div>
+        <div class="conf-role">Participant · 6 April 2026</div>
+      </div>
+      <div class="conf-badge">Participant</div>
+    </div>
+    <div class="conf-item">
+      <div class="conf-year">2025</div>
+      <div>
+        <div class="conf-name">BURS 1st National Youth Research Summit 2025</div>
+        <div class="conf-role">Institutional Representative (GTCRC) · 17 October 2025</div>
+      </div>
+      <div class="conf-badge">Representative</div>
+    </div>
+    <div class="conf-item">
+      <div class="conf-year">2025</div>
+      <div>
+        <div class="conf-name">RURS 1st International Student Conference & Research Fair (Rajshahi University)</div>
+        <div class="conf-role">Attendee & Club Representative (GTCRC) · 22–23 February 2025</div>
+      </div>
+      <div class="conf-badge">International</div>
+    </div>
+    <div class="conf-item">
+      <div class="conf-year">2023</div>
+      <div>
+        <div class="conf-name">IGC Bangladesh Research & Policy Conference</div>
+        <div class="conf-role">Attendee · Co-hosted by University of Oxford & LSE · 20 July 2023</div>
+      </div>
+      <div class="conf-badge">Oxford · LSE</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section id="testimonial">
+  <blockquote class="testimonial-quote">
+    "Yosuf's dedication to research methodology and data analysis is evident in both his academic output and his leadership of the research community."
+  </blockquote>
+  <div class="testimonial-attr">
+    Md. Galib Hossain &nbsp;·&nbsp; Associate Professor of Statistics, Govt. Titumir College
+    &nbsp;·&nbsp; Research Supervisor & Co-author
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-tag">Get In Touch</div>
+    <h2 class="section-title">Let's <em>Connect</em></h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-label">Email Address</div>
+        <div class="contact-value"><a href="mailto:yosufpatowary@gmail.com">yosufpatowary@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">+880 1557 735353</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Adarsha Nagar, Badda<br>Dhaka 1212, Bangladesh</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Nationality</div>
+        <div class="contact-value">Bangladeshi · Open to Remote</div>
+      </div>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:yosufpatowary@gmail.com" class="contact-link">
+        <span>Email Me</span><span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="https://www.linkedin.com/in/yosuf" target="_blank" class="contact-link">
+        <span>LinkedIn Profile</span><span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="https://orcid.org" target="_blank" class="contact-link">
+        <span>ORCID Research Profile</span><span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="https://doi.org/10.70112/arss-2026.15.1.4424" target="_blank" class="contact-link">
+        <span>Published Article (DOI)</span><span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="#" class="contact-link">
+        <span>Personal Blog</span><span class="contact-link-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2026 Md. Yosuf · Economics Graduate · Dhaka, Bangladesh</div>
+  <a href="#hero" class="footer-back">Back to Top ↑</a>
+</footer>
+
+</body>
+</html>
